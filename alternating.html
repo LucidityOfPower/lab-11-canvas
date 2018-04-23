@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body onload="draw()">
+	<canvas id="sketch" width="680" height="480">
+	</canvas>
+		<script>
+			function draw()
+			{
+				
+				var sketch = document.getElementById("sketch");
+				var context = sketch.getContext("2d");
+				
+				sqhor = 35;
+				crhor = 110;
+				
+				for (i = 0; i <= 9; i++)
+				{
+				
+				if (i%2 == 0)
+				{
+				//square
+				context.fillStyle = "#00a0e0"
+				context.fillRect(sqhor, 30, 50, 50);
+				sqhor = sqhor + 100;
+				}
+				else
+				{
+				//circle
+				context.fillStyle = "#9000e0";
+				context.beginPath();
+				context.arc(crhor, 55, 25, 0, 2 * Math.PI, true);
+				context.closePath();
+				context.fill();
+				crhor = crhor + 100;	
+			}
+		}
+	}
+		</script>
+</body>
+</html>
